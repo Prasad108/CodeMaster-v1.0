@@ -4,38 +4,36 @@ Welcome to TechForum India's first ever Coding Competition !
 
 Steps with commands for the **D-Day** : *31st May 2018 @ 2:00 PM - 5:00 PM*,
 
-1. Clone the repository
+1. Clone the repository with your branch
 
 ```
-git clone https://github.com/TechForumIndia/CodeMaster-v1.0.git
+git clone -b [name_of_your_new_branch] https://github.com/TechForumIndia/CodeMaster-v1.0.git
 
 cd CodeMaster-v1.0\
 ```
-2. Create local branch
+**Note** : Your team branch has been already cretaed, thanks to your fancy team name.
 
-```
-git checkout -b [name_of_your_new_branch]
-```
-**Note** : You can use your Fancy Team Name as branch name, which will make your branch unique.
+e.g. If Team Name = 'The Mighty Thor', then your branch name = the_mighty_thor
 
 Once your **Solution Code** and **output.txt** ready, keep both under folder either Problem1 or Problem 2 (depends upon, which problem you choose to solve) then,
 
-3. Add all files for commit
+2. Add all files for commit
 
 ```
 git add *
 ```
 
-4. Commit your all files
+3. Commit your all files
 ```
 git commit –m “Solution”
 ```
 
-5. Push your files along with your local branch
+4. Push your files along with your local branch
 
 ```
-git push --set-upstream origin [name_of_your_new_branch]
+git push
 ```
+**Note** : You may required to provide username/password (of your GitHub Account) while pushing the code.
 
 Rest we will take care...
 
