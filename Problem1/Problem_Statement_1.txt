@@ -1,4 +1,7 @@
-# Bus Service
+Bus Service
+
+================================================================================================================================================================
+
 
 After shifting to a new location for Mumbai, Atos wanted to start bus service for an employee coming from the Western side.
 So buses will run on the route Airoli to Borivali to-and-fro multiple times a day.
@@ -8,25 +11,27 @@ If one driver doesn't need any tea break, he will immediately start for a return
 
 Atos already have bus schedule consist of all trips with departure and arrival time between Airoli and Borivali. Atos needs the count of buses, they have to start the day at Airoli and Borivali in order to make the schedule work. It means that whenever a bus is supposed to leave Airoli or Borivali, there must actually be one there ready to go. There are various pickups and drops in the route, so buses don't necessarily arrive in the same order that they leave. and Buses will always stick to the schedule.
 
-## Input
+Input
 
-The first line gives the number of days in that schedule, **D**. **D** days follow.
+The first line gives the number of days in that schedule, D. D days follow.
 
-Each day contains a number of lines. The first line is the tea break time, **T**, in minutes.
+Each day contains a number of lines. The first line is the tea break time, T, in minutes.
 The next line has two numbers in it, 1st number is the number of trips from Airoli to Borivali (say AB), and the 2nd one is the number of trips from Borivali to Airoli (say BA). Then there are AB lines giving the details of the trips from Airoli to Borivali.
 
-Each line contains two inputs, giving the **hr:min** departure and arrival time for that trip. All trips will occur on the same day. The trips are not sorted by time. Trips timings are given in a 24-hour clock (00:00 through 23:59).
+Each line contains two inputs, giving the hr:min departure and arrival time for that trip. All trips will occur on the same day. The trips are not sorted by time. Trips timings are given in a 24-hour clock (00:00 through 23:59).
 After these AB lines, there are BA lines giving the departure and arrival times for the trips from Borivali to Airoli.
 
-## Output
+Output
 
-For each day, output one line containing "**Day-DN: A B**",
+For each day, output one line containing "Day-DN: A B",
 
-Where **DN** is Day number, and **A** is the number of buses that must start at Airoli and **B** is the number of buses that must start at Borivali on that day.
+Where DN is Day number, and A is the number of buses that must start at Airoli and B is the number of buses that must start at Borivali on that day.
 
 
-### Sample Input
-```
+================================================================================================================================================================
+
+Sample Input
+
 3
 0
 1 2
@@ -44,12 +49,10 @@ Where **DN** is Day number, and **A** is the number of buses that must start at 
 2 0
 09:00 10:30
 12:00 01:45
-```
 
-### Sample Output
 
-```
+Sample Output
+
 Day-1: 0 2
 Day-2: 3 2
 Day-3: 2 0
-```
