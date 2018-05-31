@@ -39,6 +39,7 @@ namespace CodeSlave
 
                             bool[] circuit = new bool[clapper + 1];
                             circuit[0] = true;
+                            int firstOn = 0;
                             for (int j = 1; j <= clap; j++)
                             {
                                 for (int k = clapper; k >= 1; k--)
@@ -48,15 +49,46 @@ namespace CodeSlave
                                         circuit[k] = !circuit[k];
                                     }
                                 }
+                                if (circuit.Contains(false) == false)
+                                {
+                                    if (firstOn == 0)
+                                    {
+                                        firstOn = j;
+                                        int temp = clap - firstOn;
+                                        int reminder = temp % firstOn + 1;
+                                        if (firstOn == 1)
+                                        {
+                                            if (clap % 2 == 1)
+                                            {
+                                                reminder = 0;
+                                            }
+                                            else
+                                            { reminder = 1; }
+                                        }
+                                        if (reminder == 0)
+                                        {
+                                            outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "ON"));
+                                        }
+                                        else
+                                        {
+                                            outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "OFF"));
+                                        }
+                                        break;
+                                    }
+                                }
                             }
-                            if (circuit.Contains(false))
+                            if (firstOn == 0)
                             {
-                                outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "OFF"));
+                                if (circuit.Contains(false))
+                                {
+                                    outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "OFF"));
+                                }
+                                else
+                                {
+                                    outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "ON"));
+                                }
                             }
-                            else
-                            {
-                                outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "ON"));
-                            }
+                            firstOn = 0;
                             circuit = null;
                         }
 
