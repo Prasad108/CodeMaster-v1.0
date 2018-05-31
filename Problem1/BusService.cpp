@@ -9,6 +9,7 @@ unsigned int mins()
 	char ch;
 	int min = 0;
 	cin>>hrs;
+
 	cin>>ch;
 
 	cin>>min;
