@@ -7,7 +7,7 @@ Steps with commands for the **D-Day** : *31st May 2018 @ 2:00 PM - 5:00 PM*,
 1. Clone the repository with your branch
 
 ```
-git clone -b [name_of_your_new_branch] https://github.com/TechForumIndia/CodeMaster-v1.0.git
+git clone -b [name_of_your_branch] https://github.com/TechForumIndia/CodeMaster-v1.0.git
 
 cd CodeMaster-v1.0\
 ```
