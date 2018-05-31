@@ -51,8 +51,8 @@ public class Solution {
 					read line 
 					split " " in order to get departure and arrival time*/
 					}
-				mapAB.put(key, teaTime);
-				mapBA.put(key, teaTime);
+				mapAB.put(key, value);
+				mapBA.put(key, value);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
