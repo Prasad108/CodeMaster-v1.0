@@ -71,7 +71,7 @@ int main() {
       else
       {
          strm >> a >> b;
-         ofs << "Experiment-" << count << " : " << (getOnOrOff(a, b)?"ON":"OFF") << endl; //Calling function to check on or off
+         ofs << "Experiment-" << count << ": " << (getOnOrOff(a, b)?"ON":"OFF") << endl; //Calling function to check on or off
          n--;
          if(n <= 0)
             break;
