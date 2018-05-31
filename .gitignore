@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Problem2/CodeSlave/.vs/CodeSlave/v15
+/Problem2/CodeSlave/bin/Debug
+/Problem2/CodeSlave/obj/Debug
