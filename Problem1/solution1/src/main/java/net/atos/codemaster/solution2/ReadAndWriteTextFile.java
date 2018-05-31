@@ -69,13 +69,6 @@ public class ReadAndWriteTextFile {
 	    		} catch (IOException e) {
 	    			e.printStackTrace();
 	    		}
-	        	
-	        
-	        	
-	        	
-	        	 
-	        	
-	        	 
 	        	 
 	        }catch (NoSuchFileException e) {
 	 				System.out.println("Please provide valid file name");
@@ -91,7 +84,7 @@ public class ReadAndWriteTextFile {
 	 }
 	 public static String processOutput(List schedules,String trips[],int dayCount) {
 		 
-		 
+		 //Processing logic
 		 
 		 return "Day-"+dayCount+ ": "+trips[0] +" "+trips[1]+"\n";
 	 }
