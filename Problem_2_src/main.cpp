@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cmath>
 using namespace std;
 
 bool getOnOrOff(int a, int b) //Function to check ON or OFF
@@ -12,14 +13,24 @@ bool getOnOrOff(int a, int b) //Function to check ON or OFF
    int temp = a, count = 0;
    if(b != 0)
    {
-      while(temp > 0)
+      temp--;
+      while(temp >= 0)
       {
-         count = count + temp;
+         if(temp == 0)
+            count = count + 1;
+         else
+            count = count + pow(2,temp);
          temp--;
       }
+      cout << count << endl;
+      int rem, div;
+      div = b/(count + 1);
+      rem = b%(count + 1);
+      if(rem == 0)
+         div --;
 
-      int rem;
-      rem = b%count;
+      b = b - div;
+      rem=b%count;
 
       if(rem == 0)
       {
