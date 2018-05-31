@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -43,6 +44,11 @@ public class ReadFile {
 
 					testBus.getCollectionsB().add(new BusPoint(scheduleATiming[0], scheduleATiming[1]));
 				}
+				Collections.sort(testBus.getCollectionsA());
+
+				Collections.sort(testBus.getCollectionsB());
+
+				testBus.lookOutForBusCount(teaBreakTime, testBus.getCollectionsA(), testBus.getCollectionsB());
 				System.out.println("Buses from Point A:" + testBus.aCount);
 				System.out.println("Buses from Point B:" + testBus.bCount);
 			}

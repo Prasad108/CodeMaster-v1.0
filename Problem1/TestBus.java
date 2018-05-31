@@ -53,7 +53,7 @@ public class TestBus {
 		this.collectionsB = collectionsB;
 	}
 
-	private void lookOutForBusCount(int teaTime, final List<BusPoint> collectionsA, final List<BusPoint> collectionsB) {
+	public void lookOutForBusCount(int teaTime, final List<BusPoint> collectionsA, final List<BusPoint> collectionsB) {
 		if (collectionsA.isEmpty()) {
 			this.aCount = 0;
 			this.bCount = collectionsB.size();
