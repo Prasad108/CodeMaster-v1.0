@@ -65,6 +65,10 @@ namespace CodeSlave
                                             else
                                             { reminder = 1; }
                                         }
+                                        if(firstOn==clap)
+                                        {
+                                            reminder = 0;
+                                        }
                                         if (reminder == 0)
                                         {
                                             outputFile.WriteLine(string.Format("Experiment-{0}: {1}", counter, "ON"));
