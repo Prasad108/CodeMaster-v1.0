@@ -10,6 +10,7 @@ unsigned int mins()
 	int min = 0;
 	cin>>hrs;
 	cin>>ch;
+
 	cin>>min;
 	return hrs*60+min;
 }
