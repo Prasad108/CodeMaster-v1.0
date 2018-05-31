@@ -4,6 +4,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,16 +36,22 @@ public class ClapperMainTest {
 	public static void main(String[] args) throws IOException {
 
 		ClapperMainTest c = new ClapperMainTest();
+		List<String> output = new ArrayList<String>();
 		int counter = 0;
 		for (String line : c.readFile()) {
 			String[] elem = line.split(" ");
 			if (elem.length == 2) {
 				counter += 1;
-				System.out.println("Experiment-" + counter + ":" + validate(Integer.parseInt(elem[0]), Integer.parseInt(elem[1])));
+				String outputline = "Experiment-" + counter + ":" + validate(Integer.parseInt(elem[0]), Integer.parseInt(elem[1]));
+				output.add(outputline);
+				System.out.println(outputline);
 			}
 		}
 //		System.out.println(counter);
 //		System.out.println(validate(Integer.parseInt("4"), Integer.parseInt("6")));
+		
+		Path file = Paths.get("output.txt");
+		Files.write(file, output, Charset.forName("UTF-8"));
 	}
 	
 	/**
