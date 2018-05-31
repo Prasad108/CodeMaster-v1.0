@@ -16,6 +16,7 @@ Input
 The first line gives the number of days in that schedule, D. D days follow.
 
 Each day contains a number of lines. The first line is the tea break time, T, in minutes.
+
 The next line has two numbers in it, 1st number is the number of trips from Airoli to Borivali (say AB), and the 2nd one is the number of trips from Borivali to Airoli (say BA). Then there are AB lines giving the details of the trips from Airoli to Borivali.
 
 Each line contains two inputs, giving the hr:min departure and arrival time for that trip. All trips will occur on the same day. The trips are not sorted by time. Trips timings are given in a 24-hour clock (00:00 through 23:59).
@@ -34,7 +35,7 @@ Sample Input
 
 3
 0
-1 2
+1 2b
 02:40 04:00
 01:00 02:40
 02:40 03:55
