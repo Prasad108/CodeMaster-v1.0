@@ -33,7 +33,7 @@ public class FraudStar {
             List inputDataLine = new ArrayList();		// Storage for Input Line
             
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);			// Output Per Line Data
+              //  System.out.println(line);			// Output Per Line Data
                 if(i == 0){
                 	nfExperiments = Integer.valueOf(line);
                 }else{
@@ -92,6 +92,9 @@ public class FraudStar {
 		
 		for (int i =1 ; i<= clapper;i++) {
 			map.put(i,true);
+			if(i !=1) {
+				map.put(1, !map.get(1));
+			}
 		}
 	//	System.out.println(map);
 	//	System.out.println(map.get(1));
@@ -102,6 +105,9 @@ public class FraudStar {
 					map.put(j, false);
 				} else {
 					map.put(j, true);
+				}
+				if(j !=1) {
+					map.put(1, !map.get(1));
 				}
 				j++;
 			} else {
