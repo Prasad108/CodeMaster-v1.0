@@ -30,11 +30,11 @@ public class Problem1 {
 		int baArray[] = new int[a];
 		int teaBreak[] = new int[a];
 		int totalTrips =0;
-		
+		String [][]departArriveSchedule ;
 		//For iterate over no of days.
 		for (int c = 0; c < a; c++) {
 
-			
+			departArriveSchedule = new String[c +1 ][2] ;
 			System.out.println("Enter driver's time beak in mintuns( 0, 5, 10 etc) for" + c + " day :-");
 			teaBreak[c] = in.nextInt();
 			System.out.println("Enter no of trip from Airoli to Borivali");
@@ -50,11 +50,15 @@ public class Problem1 {
 			System.out.println("Todal trips - " + totalTrips);
 			//Inner loop for accepting trip schedules;
 			for(int i = 1 ; i <= totalTrips ; i++){
-				
+//				String s1 ;
+//				String s2;
 				System.out.println("Enter departure and arrival time in 24 hours formate hh:mm only for " + i+ " :-");
 				 schedule = new Scanner(System.in).useDelimiter("\\s");  
-				 
-				 System.out.println(schedule.next() + " -- " + schedule.next());
+//				 System.out.println(s1 + " -" + s2);
+				 departArriveSchedule[c][0] = schedule.next();
+				 departArriveSchedule[c][1] = schedule.next();
+				// System.out.println( + " -- " + schedule.next());
+				 System.out.println(departArriveSchedule[c]);
 				
 			}
 			
