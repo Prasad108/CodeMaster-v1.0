@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
+ 
 public class Solution {
 
 	static int nb_bus_in_A = 0;
@@ -41,13 +41,17 @@ public class Solution {
 			while ((line = br.readLine()) != null) {
 				// process the line
 				System.out.println(line);
-				for(int i=0;i<=nbDay;i++){
-					teaTime=Long.parseLong(line);
-					
-					
-				}
-				
-				mapAB.put(key, teaTime)
+				for (int i=0; i<nbDay;i++) {
+					// logic we thought to impliment:)
+					/*long teaTime = Long.parseLong(line);
+					line = readLine();
+					split with "  " 
+					and get nb travel of A and B
+					for (int=0; i< nb travel A ...) {
+					read line 
+					split " " in order to get departure and arrival time*/
+					}
+				mapAB.put(key, teaTime);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
