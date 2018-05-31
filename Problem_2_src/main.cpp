@@ -22,7 +22,7 @@ bool getOnOrOff(int a, int b) //Function to check ON or OFF
             count = count + pow(2,temp);
          temp--;
       }
-      cout << count << endl;
+
       int rem, div;
       div = b/(count + 1);
       rem = b%(count + 1);
