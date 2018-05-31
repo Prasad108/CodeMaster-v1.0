@@ -83,6 +83,9 @@ public class Main {
 		}
 		
 		
+
+		 writer.flush();
+		 writer.close();
 		
 	
 		
