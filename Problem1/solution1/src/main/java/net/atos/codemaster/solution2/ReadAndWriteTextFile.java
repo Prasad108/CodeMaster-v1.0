@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,8 +26,11 @@ public class ReadAndWriteTextFile {
 	        	int lineCount=0;
 	        	int totalNumberOfdays=0;
 	        	int dayCount=0;
+	        	boolean endOfDay=false;
+	        	String trips[]={};
 	        	BufferedReader reader;
 	    		try {
+	    			List<String> scheduleDetailsList=null;
 	    			reader = new BufferedReader(new FileReader(
 	    					inputFile));
 	    			String line = reader.readLine();
@@ -36,22 +41,28 @@ public class ReadAndWriteTextFile {
 	    	        		 lineCount++;
 	    	        	 }else{
 	    	        		if(!line.contains(" ")){
+	    	        			
+	    	        			scheduleDetailsList=new ArrayList<String>();
+	    	        			
 	    	        			dayCount++;
 	    	        		int teaTime=new Integer(line);
 	    	        		}else{
 	    	        			if(line.contains(":")){
-	    	        				
+	    	        				scheduleDetailsList.add(line);
 	    	        			}else{
-	    	        				String trips[] =line.split(" ");
+	    	        				 trips =line.split(" ");
 	    	        				
-	    	        				writer.write("Day-"+dayCount+ ": "+trips[0] +" "+trips[1]+"\n");
-	    	        				System.out.println("Write");
+	    	        				
 	    	        			}
 	    	        		}
 	    	        			
 	    	        	 }
 	    				// read next line
 	    				line = reader.readLine();
+	    				if(!line.contains(" ")){
+	    					
+	    					writer.write(processOutput(scheduleDetailsList,trips,dayCount));
+	    				}
 	    			}
 	    			reader.close();
 	    			writer.close();
@@ -77,5 +88,11 @@ public class ReadAndWriteTextFile {
 		//return true;
 		
 	
+	 }
+	 public static String processOutput(List schedules,String trips[],int dayCount) {
+		 
+		 
+		 
+		 return "Day-"+dayCount+ ": "+trips[0] +" "+trips[1]+"\n";
 	 }
 }
