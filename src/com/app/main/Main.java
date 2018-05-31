@@ -1,22 +1,67 @@
 package com.app.main;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		
+		
+		
+		BufferedReader in = new BufferedReader(new FileReader("C:/Users/a664162/Desktop/input_2.txt"));
+		String str;
+
+		List<String> list = new ArrayList<String>();
+
+		while((str = in.readLine()) != null){
+			//System.out.println(str);
+		    list.add(str);
+		}
+		
+		
+
+		
 	
 		Scanner s=new Scanner(System.in);
-		System.out.println("Enter the number of Experiments");
-		int NumberOfExperiments=s.nextInt();
+
+		int NumberOfExperiments=Integer.parseInt(list.get(0));
+		
 		int arr[][]=new int[NumberOfExperiments][2];
-		for(int i=0;i<NumberOfExperiments;i++)
+		for(int i=1;i<list.size();i++)
 		{
-			System.out.println("Enter the number of circuits for experiment :"+ (i+1) );
-			arr[i][0]=s.nextInt();
-			System.out.println("Enter the number of clapping experiment :"+(i+1));
-			arr[i][1]=s.nextInt();
+		
+			String inputTextLine=list.get(i);
+			String[] values=inputTextLine.split(" ");
+			
+				arr[i-1][0]=Integer.parseInt(values[0]);
+				arr[i-1][1]=Integer.parseInt(values[1]);		
 		}
+		
+		
+		
+		
+		/*for(int i=0;i<NumberOfExperiments;i++)
+		{
+			
+			for(int j=0;j<2;j++) {
+							System.out.println(arr[i][j]);
+			}
+			
+		
+		}*/
+		
+		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("output.txt"), "utf-8"));
+		
+		
 	
 		for(int i=0;i<NumberOfExperiments;i++)
 		{
@@ -27,13 +72,24 @@ public class Main {
 			
 			if(IsBulbOn(circuitArr)==true)
 			{
-				System.out.println("Experiment-"+(i+1)+" : ON ");
+				writer.write("Experiment-"+(i+1)+" : ON ");
+				((BufferedWriter) writer).newLine();
+				//System.out.println("Experiment-"+(i+1)+" : ON ");
 			}else {
-				System.out.println("Experiment-"+(i+1)+" : OFF ");
+				writer.write("Experiment-"+(i+1)+" : OFF ");
+				((BufferedWriter) writer).newLine();
+				//System.out.println("Experiment-"+(i+1)+" : OFF ");
 			}			
 		}
+		
+		
+		
+	
+		
+		
 	}
 	
+
 	
 	public static int[] Clapp(int [] arr) {		
 		for(int i=0;i<arr.length;i++)
